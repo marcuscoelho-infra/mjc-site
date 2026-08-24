@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MJC Ar Condicionado | Instalação, Manutenção e Refrigeração</title>
+<meta name="description" content="Instalação, manutenção e refrigeração de ar-condicionado residencial e comercial. Orçamento rápido pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0A1F44;
+    --navy-light: #13315e;
+    --red: #E63329;
+    --red-dark: #c22820;
+    --white: #FFFFFF;
+    --grey: #F4F6F8;
+    --grey-line: #E3E7ED;
+    --text: #2B3550;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+    padding-top: 88px; /* compensa o header fixo */
+  }
+
+  h1, h2, h3 { font-family: 'Poppins', sans-serif; color: var(--navy); }
+
+  a { color: inherit; text-decoration: none; }
+
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* ===== HEADER ===== */
+  header {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    height: 88px;
+    background: var(--navy);
+    z-index: 1000;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+
+  header .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .logo span { color: var(--red); }
+  .logo img {
+    height: 56px; width: auto; display: block;
+    background: var(--white);
+    border-radius: 8px;
+    padding: 4px 6px;
+  }
+  .logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+  .logo-text strong { font-size: 1.15rem; letter-spacing: 0.3px; }
+  .logo-text small { font-size: 0.68rem; color: #B9C2D6; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.4rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .btn:hover { background: var(--red-dark); transform: translateY(-1px); }
+  .btn:focus-visible { outline: 3px solid var(--white); outline-offset: 2px; }
+
+  .btn-header { padding: 0.6rem 1.1rem; font-size: 0.85rem; }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    padding: 5rem 0 6rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    right: -80px; top: -80px;
+    width: 340px; height: 340px;
+    border: 60px solid rgba(230,51,41,0.12);
+    border-radius: 50%;
+  }
+
+  .hero .container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 720px;
+  }
+
+  .hero-logo {
+    height: 96px;
+    width: auto;
+    background: var(--white);
+    border-radius: 14px;
+    padding: 8px 12px;
+    margin: 0 auto 1.5rem;
+    display: block;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+  }
+
+  .hero-brand {
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.1rem, 5.5vw, 3.4rem);
+    letter-spacing: 0.5px;
+    line-height: 1.05;
+    margin-bottom: 0.5rem;
+  }
+  .hero-brand span { color: var(--red); }
+
+  .hero-eyebrow {
+    color: #C9D2E3;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero h1 {
+    color: var(--white);
+    font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    color: #C9D2E3;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+  }
+
+  /* ===== SECTION LABEL ===== */
+  .section { padding: 4.5rem 0; }
+  .section-grey { background: var(--grey); }
+
+  .section-head {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 3rem;
+  }
+
+  .section-head .eyebrow {
+    color: var(--red);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.6rem;
+    display: block;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-head p { color: #5B6785; }
+
+  /* ===== SERVICES ===== */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--grey-line);
+    border-radius: 14px;
+    padding: 1.75rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(10,31,68,0.08);
+  }
+
+  .service-icon {
+    width: 48px; height: 48px;
+    border-radius: 10px;
+    background: rgba(230,51,41,0.1);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .service-icon svg { width: 24px; height: 24px; stroke: var(--red); }
+
+  .service-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .service-card p { color: #5B6785; font-size: 0.92rem; }
+
+  /* ===== WHY CHOOSE US ===== */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+  }
+
+  .why-item { text-align: center; }
+
+  .why-icon {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1rem;
+  }
+  .why-icon svg { width: 26px; height: 26px; stroke: var(--white); }
+
+  .why-item h3 { font-size: 1rem; margin-bottom: 0.4rem; }
+  .why-item p { color: #5B6785; font-size: 0.9rem; }
+
+  /* ===== GALERIA ===== */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+
+  .gallery-item {
+    aspect-ratio: 4 / 3;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    background: var(--grey);
+  }
+
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .gallery-item:hover img { transform: scale(1.05); }
+
+  @media (max-width: 900px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===== FORM ===== */
+  .form-wrap {
+    max-width: 620px;
+    margin: 0 auto;
+    background: var(--white);
+    border: 1px solid var(--grey-line);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 12px 32px rgba(10,31,68,0.06);
+  }
+
+  .form-row { margin-bottom: 1.25rem; }
+  .form-row-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border: 1.5px solid var(--grey-line);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text);
+    background: var(--white);
+  }
+
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--red);
+  }
+
+  textarea { resize: vertical; min-height: 90px; }
+
+  .form-submit { width: 100%; justify-content: center; padding: 0.9rem; font-size: 1rem; }
+
+  .form-note {
+    font-size: 0.8rem;
+    color: #8590AA;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .field-error {
+    border-color: var(--red) !important;
+    background: rgba(230,51,41,0.04);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--navy);
+    color: #B9C2D6;
+    padding: 2.5rem 0;
+    text-align: center;
+  }
+
+  footer .logo { justify-content: center; margin-bottom: 0.5rem; }
+  footer .foot-tag { font-size: 0.88rem; margin-bottom: 1rem; }
+
+  .foot-whats {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .foot-whats svg { width: 18px; height: 18px; stroke: var(--red); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 640px) {
+    body { padding-top: 64px; }
+    header { height: 64px; }
+    .btn-header { padding: 0.5rem 0.9rem; font-size: 0.78rem; }
+    .logo { font-size: 1.05rem; }
+    .hero { padding: 3.5rem 0 4rem; }
+    .section { padding: 3rem 0; }
+    .form-row-split { grid-template-columns: 1fr; }
+    .form-wrap { padding: 1.75rem 1.25rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">
+      <img src="assets/logo-mjc.jpeg" alt="MJC Ar Condicionado">
+      <div class="logo-text">
+        <strong>MJC Ar Condicionado</strong>
+        <small>Manutenção e Instalação</small>
+      </div>
+    </div>
+    <a href="#orcamento" class="btn btn-header">Solicitar Orçamento</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <img src="assets/logo-mjc.jpeg" alt="MJC Ar Condicionado" class="hero-logo">
+    <div class="hero-brand">MJC <span>Ar Condicionado</span></div>
+    <span class="hero-eyebrow">Manutenção e Instalação</span>
+    <h1>Climatização com quem entende do assunto</h1>
+    <p>Instalação, manutenção e refrigeração de ar-condicionado para sua casa ou empresa, com atendimento rápido e serviço garantido.</p>
+    <a href="#orcamento" class="btn">Solicitar Orçamento</a>
+  </div>
+</section>
+
+<section class="section" id="servicos">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">O que fazemos</span>
+      <h2>Nossos Serviços</h2>
+      <p>Atendimento completo em climatização, do projeto residencial à refrigeração comercial.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="9" rx="2"/><path d="M6 15v3M18 15v3M2 10h20"/></svg>
+        </div>
+        <h3>Instalação de Ar-Condicionado</h3>
+        <p>Instalação completa seguindo as normas técnicas, com teste de funcionamento e acabamento limpo.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <h3>Manutenção Preventiva</h3>
+        <p>Revisões periódicas que evitam problemas futuros e mantêm a eficiência do seu equipamento.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 1.4 0l1.6-1.6a1 1 0 0 0 0-1.4l-1.4-1.4a1 1 0 0 0-1.4 0L13.3 3.5a1 1 0 0 0 0 1.4z"/><path d="m2 22 5-5"/><path d="M8.3 9.7a1 1 0 0 0 0-1.4l-1.6-1.6a1 1 0 0 0-1.4 0L3.9 8.1a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0z"/></svg>
+        </div>
+        <h3>Manutenção Corretiva</h3>
+        <p>Diagnóstico e reparo rápido para equipamentos com defeito, vazamento ou baixo rendimento.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"/></svg>
+        </div>
+        <h3>Higienização e Limpeza</h3>
+        <p>Limpeza profunda de filtros e serpentinas para um ar mais saudável e economia de energia.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v10H3zM7 21h10M9 17v4M15 17v4"/></svg>
+        </div>
+        <h3>Refrigeração Comercial</h3>
+        <p>Câmaras frias e sistemas de refrigeração para comércios, restaurantes e indústrias.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg>
+        </div>
+        <h3>Instalação Elétrica</h3>
+        <p>Ponto elétrico dedicado e dimensionado corretamente para o seu ar-condicionado.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section-grey" id="sobre">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Diferenciais</span>
+      <h2>Por que escolher a MJC</h2>
+    </div>
+    <div class="why-grid">
+
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <h3>Atendimento rápido</h3>
+        <p>Resposta ágil do orçamento à execução do serviço.</p>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7z"/></svg>
+        </div>
+        <h3>Garantia no serviço</h3>
+        <p>Trabalho realizado com garantia e acompanhamento pós-serviço.</p>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Experiência no mercado</h3>
+        <p>Anos de atuação atendendo clientes residenciais e comerciais.</p>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        </div>
+        <h3>Residencial e comercial</h3>
+        <p>Atendemos casas, apartamentos, lojas, câmaras frias e indústrias.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="trabalhos">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Nosso trabalho</span>
+      <h2>Serviços realizados</h2>
+      <p>Alguns exemplos de instalações e manutenções feitas pela MJC.</p>
+    </div>
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <img src="assets/trabalho-01.jpg" alt="Unidade condensadora de ar-condicionado instalada em telhado">
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/trabalho-02.jpg" alt="Central de refrigeração comercial instalada em casa de máquinas">
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/trabalho-03.jpg" alt="Evaporadora de ar-condicionado instalada em ambiente interno">
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/trabalho-04.jpg" alt="Sistema de refrigeração comercial com tubulações">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="orcamento">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Vamos conversar</span>
+      <h2>Solicitar Orçamento</h2>
+      <p>Preencha os dados abaixo. Ao enviar, o WhatsApp abre com a mensagem já pronta pra gente.</p>
+    </div>
+
+    <div class="form-wrap">
+      <form id="form-orcamento" novalidate>
+        <div class="form-row form-row-split">
+          <div>
+            <label for="nome">Nome completo *</label>
+            <input type="text" id="nome" name="nome">
+          </div>
+          <div>
+            <label for="telefone">Telefone *</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(79) 9 9999-9999">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="endereco">Bairro / Endereço *</label>
+          <input type="text" id="endereco" name="endereco" placeholder="Ex: Bairro Jardins, Aracaju">
+        </div>
+
+        <div class="form-row">
+          <label for="servico">Tipo de serviço *</label>
+          <select id="servico" name="servico">
+            <option value="">Selecione um serviço</option>
+            <option value="Instalação de ar-condicionado">Instalação de ar-condicionado</option>
+            <option value="Manutenção preventiva">Manutenção preventiva</option>
+            <option value="Manutenção corretiva / reparo">Manutenção corretiva / reparo</option>
+            <option value="Higienização e limpeza">Higienização e limpeza</option>
+            <option value="Refrigeração comercial">Refrigeração comercial</option>
+            <option value="Instalação elétrica">Instalação elétrica</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="observacoes">Observações</label>
+          <textarea id="observacoes" name="observacoes" placeholder="Ex: modelo do aparelho, quantidade de ambientes, urgência..."></textarea>
+        </div>
+
+        <button type="submit" class="btn form-submit">
+          Enviar via WhatsApp
+        </button>
+        <p class="form-note">Você será redirecionado ao WhatsApp com a mensagem preenchida automaticamente.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <img src="assets/logo-mjc.jpeg" alt="MJC Ar Condicionado" style="height:64px;width:auto;background:var(--white);border-radius:10px;padding:6px 8px;margin-bottom:0.75rem;">
+    <p class="foot-tag">Manutenção e Instalação</p>
+    <a class="foot-whats" href="https://wa.me/5535991725848" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-4.95A9 9 0 1 1 8.05 19.35z"/></svg>
+      Fale conosco pelo WhatsApp
+    </a>
+  </div>
+</footer>
+
+<script>
+  const WHATSAPP_NUMBER = '5535991725848';
+
+  const form = document.getElementById('form-orcamento');
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const nome = document.getElementById('nome');
+    const telefone = document.getElementById('telefone');
+    const endereco = document.getElementById('endereco');
+    const servico = document.getElementById('servico');
+    const observacoes = document.getElementById('observacoes');
+
+    const campos = [nome, telefone, endereco, servico];
+    let valido = true;
+
+    campos.forEach(function (campo) {
+      if (!campo.value.trim()) {
+        campo.classList.add('field-error');
+        valido = false;
+      } else {
+        campo.classList.remove('field-error');
+      }
+    });
+
+    if (!valido) {
+      alert('Por favor, preencha todos os campos obrigatórios (marcados com *).');
+      return;
+    }
+
+    const linhas = [
+      'Olá! Gostaria de solicitar um orçamento:',
+      '',
+      'Nome: ' + nome.value.trim(),
+      'Telefone: ' + telefone.value.trim(),
+      'Endereço/Bairro: ' + endereco.value.trim(),
+      'Serviço: ' + servico.value
+    ];
+
+    if (observacoes.value.trim()) {
+      linhas.push('Observações: ' + observacoes.value.trim());
+    }
+
+    const mensagem = linhas.join('\n');
+    const url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(mensagem);
+
+    window.open(url, '_blank', 'noopener');
+  });
+</script>
+
+</body>
+</html>
